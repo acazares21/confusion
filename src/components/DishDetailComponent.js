@@ -23,7 +23,7 @@ class DishDetail extends Component {
         this.setState({ selectedDish: dish});
     }
 
-    renderComments(comments){
+    renderComments({comments}){
         if (comments == null) {
             return (<div></div>)
         }
@@ -53,7 +53,7 @@ class DishDetail extends Component {
         )
     }
 
-    renderDish(dish) {
+    renderDish({dish}) {
         if (dish != null) {
             return (
                 <div className='col-12 col-md-5 m-1'>
@@ -82,7 +82,7 @@ class DishDetail extends Component {
         }
         const dishItem = this.renderDish(dish);
         const dishComment = this.renderComments(dish.comments);
-        
+
         return (
             <div className='row'>
                 {dishItem}
