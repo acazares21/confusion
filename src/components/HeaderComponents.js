@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {NavBar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron} from 'reactstrap';
-import {NavLink} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from "reactstrap";
+import {  NavLink } from 'react-router-dom';
 
-class Header extends Components{
+class Header extends Component{
 
     constructor(props){
         super(props);
@@ -21,45 +21,56 @@ class Header extends Components{
     render(){
         return(
             <React.Fragment>
-                <Navbar dark expand="md">
+                <Navbar dark expand="md">                   
                     <div className="container">
-                        <NavbarToggler onClick={this.toggleNav}/>
+
+                        <NavbarToggler onClick={this.toggleNav} />
+
                         <NavbarBrand className="mr-auto" href="/">
-                            <img src= "assets/images/logo.png" height="30" width="41"
-                            alt="Ristorante Con Fusion"/>
+                            <img src="assets/images/logo.png" height="30" width="41" alt="Ristorante Con Fusion" />
                         </NavbarBrand>
+
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">
-                                        <span className="fa fa-home fa-lg"></span> Home
+                                    <span className="fa fa-home fa-lg" ></span>Home
                                     </NavLink>
                                 </NavItem>
+                                
                                 <NavItem>
                                     <NavLink className="nav-link" to="/aboutus">
-                                        <span className="fa fa-info fa-lg"></span> About Us
+                                    <span className="fa fa-info fa-lg" ></span>About Us
                                     </NavLink>
                                 </NavItem>
+                                
                                 <NavItem>
                                     <NavLink className="nav-link" to="/menu">
-                                        <span className="fa fa-list fa-lg"></span> Menu
+                                        <span className="fa fa-list fa-lg" ></span>Menu
                                     </NavLink>
                                 </NavItem>
+                                
                                 <NavItem>
                                     <NavLink className="nav-link" to="/contactus">
-                                        <span className="fa fa-address-card fa-lg"></span> Contact Us
+                                        <span className="fa fa-address-card fa-lg" ></span>Contact Us
                                     </NavLink>
                                 </NavItem>
-                            </Nav>
+
+                            </Nav>                        
                         </Collapse>
                     </div>
                 </Navbar>
+
                 <Jumbotron>
                     <div className="container">
-                        <div className="col-12 ol-sm-6">
+                        <div className="row row-header">
                             <div className="col-12 col-sm-6">
-                                <h1>Ristorante Con Fusion</h1>
-                                <p>We take inspiration from the World's best cuisines, ande create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                                <h1> Ristorante Con Fusion </h1>
+                                <p> 
+                                    We take inspiration from te World's best cuisines, and create a unique 
+                                    fusion experience. Our lipsmacking creations 
+                                    will ti ckle your culinary senses!
+                                </p>
                             </div>
                         </div>
                     </div>
