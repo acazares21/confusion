@@ -21,9 +21,11 @@ class Contact extends Component {
                 email: false
             }
         }
+        
         this.handleSubmit= this.handleSubmit.bind(this);
         this.handleInputChange= this.handleInputChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this)
+
     }
 
     handleInputChange(event){
