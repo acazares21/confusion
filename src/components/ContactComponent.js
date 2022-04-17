@@ -77,21 +77,21 @@ class Contact extends Component {
                                 <Label htmlFor="firstname" md={2}>First Name</Label>
                                 <Col md={10}>
                                     <Control.text model=".firstname" id="firstname" name="firstname" className="form-control" placeholder="First Name" validators={{required, minLength: minLength(3), maxLength: maxLength(15)}}/>
-                                    <Errors className= "text-danger" model=".firstname" show="touched" messages={{required: 'Required', minLength: 'Must be greater tahn 2 characters', maxLength: 'Must be 15 characters or less'}}/>
+                                    <Errors className= "text-danger" model=".firstname" show="touched" messages={{required: 'Required', minLength: 'Must be greater than 2 characters', maxLength: 'Must be 15 characters or less'}}/>
                                 </Col>
                             </Row>
                             <Row className="form-group">
                                 <Label htmlFor="lastname" md={2}>Last Name</Label>
                                 <Col md={10}>
                                     <Control.text model=".lastname" id="lastname" name="lastname" placeholder="Last Name" className="form-control" validators={{required, minLength: minLength(3), maxLength: maxLength(15)}}/>
-                                    <Errors className= "text-danger" model=".lastname" show="touched" messages={{required: 'Required', minLength: 'Must be greater tahn 2 characters', maxLength: 'Must be 15 characters or less'}}/>
+                                    <Errors className= "text-danger" model=".lastname" show="touched" messages={{required: 'Required', minLength: 'Must be greater than 2 characters', maxLength: 'Must be 15 characters or less'}}/>
                                 </Col>
                             </Row>
                             <Row className="form-group">
                                 <Label htmlFor="telnum" md={2}>Contact Tel.</Label>
                                 <Col md={10}>
                                     <Control.text model=".telnum" id="telnum" name="telnum" className="form-control" placeholder="Tel. Number" validators={{required, minLength: minLength(3), maxLength: maxLength(15), isNumber}} />
-                                    <Errors className= "text-danger" model=".telnum" show="touched" messages={{required: 'Required', minLength: 'Must be greater tahn 2 numbers', maxLength: 'Must be 15 numbers or less', isNumber: 'Must be a number'}}/>
+                                    <Errors className= "text-danger" model=".telnum" show="touched" messages={{required: 'Required', minLength: 'Must be greater than 2 numbers ', maxLength: 'Must be 15 numbers or less', isNumber: 'Must be a number'}}/>
                                 </Col>
                             </Row>
                             <Row className="form-group">

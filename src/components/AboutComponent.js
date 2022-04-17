@@ -38,7 +38,7 @@ function About(props) {
                 <div className="col-12">
                     <h3>About Us</h3>
                     <hr />
-                </div>                
+                </div>
             </div>
             <div className="row row-content">
                 <div className="col-12 col-md-6">
@@ -78,14 +78,19 @@ function About(props) {
                     </Card>
                 </div>
             </div>
+
+
             <div className="row row-content">
                 <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
+                
                 <div className="col-12">
-                    <Media list>
-                        {leaders}
-                    </Media>
+                    <div className="row">
+                        <Media list>
+                            {leaders}
+                        </Media>
+                    </div>                    
                 </div>
             </div>
         </div>

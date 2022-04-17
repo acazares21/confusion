@@ -15,10 +15,10 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = state => {
   return {
-    dishes : state.dishes,
-    comments : state.comments,
-    promotions : state.promotions,
-    leaders : state.leaders
+    comments: state.comments,
+    dishes: state.dishes,
+    leaders: state.leaders,
+    promotions: state.promotions,
   }    
 }
 
@@ -34,9 +34,9 @@ class Main extends Component {
     const HomePage = () => {
       return(
           <Home 
-              dish={ this.props.dishes.filter( (dish)=>dish.featured )[0] }
-              promotion={this.props.promotions.filter( (promotion)=>promotion.featured )[0] }
-              leader={this.props.leaders.filter( (leader)=>leader.featured )[0] }
+            dish={ this.props.dishes.filter( (dish)=>dish.featured )[0] }
+            promotion={this.props.promotions.filter( (promotion)=>promotion.featured )[0] }
+            leader={this.props.leaders.filter( (leader)=>leader.featured )[0] }
           />
       );
   };
@@ -45,17 +45,17 @@ class Main extends Component {
       return(
         <DishDetail  
           dish={this.props.dishes.filter( (dish) => dish.id === parseInt(match.params.dishId, 10))[0] } 
-          comments={this.props.comments.filter( (comment) => comment.dishId === parseInt(match.params.dishId, 10)) }     
+          comments={this.props.comments.filter( (comment) => comment.dishId === parseInt(match.params.dishId, 10)) } 
         />
       );
     }
 
     const AboutUsPage = () => {
       return(
-          <About 
-              leaders={this.ptops.leaders}
-          />
-      );
+        <About 
+          leaders={this.props.leaders}
+        />
+    );
   };
 
     return (
@@ -64,14 +64,14 @@ class Main extends Component {
         {/*Links to differents parts of the web application*/}
         <Switch>
           <Route path="/Home" component={HomePage}/>
-          <Route exact path="/menu" component={()=> <Menu dishes={this.props.dishes}/>}/>
+          <Route exact path="/menu" component={() => <Menu dishes={this.props.dishes}/> }/>
           <Route exact path="/contactus" component={Contact}/>
-          <Route path="menu/:dishId" component={DishWithId}/>
+          <Route path="/menu/:dishId" component={DishWithId}/>
           <Route exact path="/aboutus" component={AboutUsPage} />
           {/*By default it redirects to Home*/}
           <Redirect to ="/home"/>
         </Switch>
-        <Footer />
+        <Footer></Footer>
       </div>
     );
   }
