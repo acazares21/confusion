@@ -3,6 +3,7 @@ import { Component } from "react";
 import { Card, CardImg, CardImgOverlay, CardTitle, CardBody, CardText, Breadcrumb, BreadcrumbItem, Button, Modal, ModalBody, ModalHeader, Label, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Loading } from "./LoadingComponent";
 
 //Validators
 const required = (val) => val && val.length; //value must be > 0
@@ -206,6 +207,25 @@ class CommentForm extends Component {
 
 //Showing Rendered Dish and its Comments on the page
     const DishDetail = (props) => {
+
+        if (props.isLoading) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <Loading />
+                    </div>
+                </div>
+            );
+        }
+        else if (props.errMess) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            );
+        }
 
         const dish = props.dish
         
