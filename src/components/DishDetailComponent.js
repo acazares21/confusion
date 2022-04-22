@@ -4,6 +4,7 @@ import { Card, CardImg, CardImgOverlay, CardTitle, CardBody, CardText, Breadcrum
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from "./LoadingComponent";
+import { baseUrl } from '../shared/baseUrl';
 
 //Validators
 const required = (val) => val && val.length; //value must be > 0
@@ -158,7 +159,7 @@ class CommentForm extends Component {
             return (
                 <div className='col-12 col-md-5 m-1'>
                     <Card>
-                        <CardImg width="100%" src={dish.image} alt={dish.name} />
+                    <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                         <CardBody>
                             <CardTitle> {dish.name}</CardTitle>
                             <CardText> {dish.description} </CardText>
